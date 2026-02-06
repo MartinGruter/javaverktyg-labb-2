@@ -30,9 +30,8 @@ jobs:
         run: npx playwright install
 
       - name: Start server and wait for port
-        run: |
-          npm run start &
-          npm install -g wait-port
+        run: mvn spring-boot:run &
+          
           wait-port -h localhost -p 8080 -t 20000
         shell: bash
 
