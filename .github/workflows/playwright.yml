@@ -23,8 +23,12 @@ jobs:
       - name: Build project
         run: mvn -B package
 
+      - name: Install npm dependencies
+        run: npm ci
+
       - name: Install Playwright browsers
-        run: mvn playwright:install
+        run: npx playwright install
 
       - name: Run Playwright tests
-        run: mvn test
+        run: npx playwright test
+
