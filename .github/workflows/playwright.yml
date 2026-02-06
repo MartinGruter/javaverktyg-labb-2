@@ -29,6 +29,16 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install
 
+      - name: Start server and wait for port
+        run: |
+          npm run start &
+          npm install -g wait-port
+          wait-port -h localhost -p 8080 -t 20000
+        shell: bash
+
+      - name: Check if server is up
+        run: curl -v http://localhost:8080/balance || true
+
       - name: Run Playwright tests
         run: npx playwright test
 
