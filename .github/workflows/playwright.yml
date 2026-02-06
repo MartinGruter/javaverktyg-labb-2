@@ -36,7 +36,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             libgtk-4-1 \
-            libgraphene-1.0-0 \
+            libgtk-3-0 \
             libx11-xcb1 \
             libxcomposite1 \
             libxdamage1 \
@@ -44,11 +44,13 @@ jobs:
             libgbm1 \
             libnss3 \
             libasound2 \
-            libpangocairo-1.0-0 \
             libcups2 \
-            libatk-bridge2.0-0 \
             libdrm2 \
-            libgbm1 \
+            libpangocairo-1.0-0 \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libharfbuzz-icu0 \
+            libhyphen0 \
             libflite1 \
             libopus0 \
             gstreamer1.0-plugins-base \
@@ -56,10 +58,9 @@ jobs:
             gstreamer1.0-plugins-bad \
             gstreamer1.0-plugins-ugly \
             gstreamer1.0-libav \
-            libharfbuzz-icu0 \
-            libhyphen0 \
-            libgles2-mesa \
+            libgl1-mesa-glx \
             libavif16
+
 
       - name: Install Playwright browsers
         run: npx playwright install
